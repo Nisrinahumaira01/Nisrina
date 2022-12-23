@@ -25,3 +25,5 @@ Route::get('/test', function(){
 Route::get('admin/home', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home')->middleware('is_admin');
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
+Route::get('admin/books/export', [App\Http\Controllers\AdminController::class, 'export'])
+    ->name('admin.book.export')->middleware('is_admin');
